@@ -1,165 +1,176 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="keywords" content="bim, jargon, buzzphrase, bimbledygook, examples"/>
-  <meta name="author" content="Mr. BIM Guy"/>
-  <meta name="description" content="BIM All the Things"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="keywords" content="bim, jargon, buzzphrase, bimbledygook, examples" />
+  <meta name="author" content="Don Rudder" />
+  <meta name="description" content="BIM All the Things" />
   <title>BIMbledygook generator</title>
+
+  <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet" />
+  <link href="/bower_components/morrisjs/morris.css" rel="stylesheet" />
+  <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+  <script language="Javascript" type="text/javascript">
+
+    var m_phrase_01 = new Array();
+
+    m_phrase_01[0] = "My BIM organisation believes in";
+    m_phrase_01[1] = "The BIM solution can only be";
+    m_phrase_01[2] = "The BIM consultants recommend";
+    m_phrase_01[3] = "Forward-looking BIM companies invest in";
+    m_phrase_01[4] = "Our upgraded BIM model now offers";
+    m_phrase_01[5] = "Our exploratory BIM research points to";
+    m_phrase_01[6] = "You really can't fail with BIM ";
+    m_phrase_01[7] = "I can make a BIM window to discuss your";
+    m_phrase_01[8] = "At base BIM level, this just BIMs down to";
+    m_phrase_01[9] = "Only non BIM geeks stuck in the 90s still go for";
+    m_phrase_01[10] = "We need to get BIMed about our";
+    m_phrase_01[11] = "We need a more BIM-sky approach to";
+    m_phrase_01[12] = "It's time that we became uber-BIM-efficient with our";
+    m_phrase_01[13] = "We need to cascade BIM memos about our";
+    m_phrase_01[14] = "This is no time to bite the BIM-bullet with our";
+    m_phrase_01[15] = "We're going forward with our BIM plans to implement";
+    m_phrase_01[16] = "We now offer BIM diplomas in";
+    m_phrase_01[17] = "It's time to revamp and reboot our BIM server";
+    m_phrase_01[18] = "Today marks the BIM anniversary celebrations of our";
+    m_phrase_01[19] = "We need a more contemporary BIM reimagining of our";
+
+    var m_phrase_02 = new Array();
+    m_phrase_02[0] = "integrated";
+    m_phrase_02[1] = "total";
+    m_phrase_02[2] = "systemised";
+    m_phrase_02[3] = "parallel";
+    m_phrase_02[4] = "functional";
+    m_phrase_02[5] = "responsive";
+    m_phrase_02[6] = "optional";
+    m_phrase_02[7] = "synchronised";
+    m_phrase_02[8] = "compatible";
+    m_phrase_02[9] = "balanced";
+    m_phrase_02[10] = "interactive";
+    m_phrase_02[11] = "regenerated";
+    m_phrase_02[12] = "21st Century";
+    m_phrase_02[13] = "millennial";
+    m_phrase_02[14] = "homogenised";
+    m_phrase_02[15] = "holistic";
+    m_phrase_02[16] = "facilitating";
+    m_phrase_02[17] = "global";
+    m_phrase_02[18] = "remote";
+    m_phrase_02[19] = "quality";
+    m_phrase_02[20] = "knowledge-based";
+    m_phrase_02[21] = "deconstructed";
+    m_phrase_02[22] = "'Outside the box'";
+    m_phrase_02[23] = "dot-com";
+    m_phrase_02[24] = "three-dimensional";
+    m_phrase_02[25] = "four-dimensional";
+    m_phrase_02[26] = "nascent";
+    m_phrase_02[26] = "ambient";
+
+    var m_word = new Array();
+    m_word[0] = "management";
+    m_word[1] = "organisational";
+    m_word[2] = "monitored";
+    m_word[3] = "reciprocal";
+    m_word[4] = "digital";
+    m_word[5] = "logistical";
+    m_word[6] = "transitiona";
+    m_word[7] = "incremental";
+    m_word[8] = "third-generation";
+    m_word[9] = "policy";
+    m_word[10] = "relative";
+    m_word[11] = "modular";
+    m_word[12] = "asset";
+    m_word[13] = "strategic";
+    m_word[14] = "administrative";
+
+    var m_phrase_ending = new Array();
+    m_phrase_ending[0] = "BIM options";
+    m_phrase_ending[1] = "7D BIM flexibility";
+    m_phrase_ending[2] = "BIM capability";
+    m_phrase_ending[3] = "BIM mobility";
+    m_phrase_ending[4] = "BIM programming";
+    m_phrase_ending[5] = "BIM concepts";
+    m_phrase_ending[6] = "BIM-time-phases";
+    m_phrase_ending[7] = "BIM paradigm shifts";
+    m_phrase_ending[8] = "projections";
+    m_phrase_ending[9] = "BIM hardware";
+    m_phrase_ending[10] = "BIM contingencies";
+    m_phrase_ending[11] = "BIM processing";
+    m_phrase_ending[12] = "alignment";
+    m_phrase_ending[13] = "BIMovation";
+    m_phrase_ending[14] = "matrix BIM approaches";
+    m_phrase_ending[15] = "BIM consulting";
+    m_phrase_ending[16] = "BIM resources";
+
+    //-- Generate a random number between 0 and max.
+    function randomNum(max) {
+      var rNum = NaN;
+      while (isNaN(rNum)) {
+        rNum = Math.floor(Math.random() * (max));
+      }
+      return rNum;
+    }
+
+    //--Function to generate the random bimgarbage.
+    function bimgarbage() {
+      msg = "" + m_phrase_01[randomNum(m_phrase_01.length)] + " ";
+      msg += m_phrase_02[randomNum(m_phrase_02.length)] + " ";
+      msg += m_word[randomNum(m_word.length)] + " ";
+      msg += m_phrase_ending[randomNum(m_phrase_ending.length)] + ".";
+      return msg;
+    }
+
+    //--Function to generate the random bimgarbage.
+    function example() {
+      msg = "" + w5[randomNum(w5.length)];
+      return msg;
+    }
+
+  </script>
+  
 </head>
 
 <body>
-  <div id="all">
-    <div id="back">
-      <div id="contentarea2">
 
-        <div id="wrapper">
-          <div id="main">
+  <div id="page-wrapper">
+    <form name="myform" action="">
+      <div class="row" style="padding: 20px;">
+        <div class="col-lg-12">
+          <h2 class="page-header"><i class="fa fa-comments fa-2x"></i>&nbsp;&nbsp;&nbsp;BIMbledygook</h2>
+         
+
+          <p>Have you ever had an overwhelming need to get your hands on some incredibly meaningless, empty BIM phrases that make it look like you know what you're talking about? We've got just the thing you need!!!</p>
+
+          <p>Just click on the button below and a random piece of uselss BIM jargon will appear in the box. If you need more than one, just click the button again... and again... and again... and again... and again... and again... </p>
 
 
-            <div id="system-message-container">
-            </div>
-            <div class="item-page">
-              <h2>
-                BIMbledygook generator
-              </h2>
+          <p><textarea name="insight" cols="40" rows="3" class="form-control"></textarea>
+          </p>
+          <input type="button" class="btn btn-primary pull-right" name="generator" value="Generate some BIMbledygook" onclick="myform.insight.value = bimgarbage()"/>
 
-              <p>Have you ever had an overwhelming need to use meaningless, empty BIM phrases that make it look like you know what you are talking about?</p>
 
-              <p>Simply click on the button below and a random piece of uselss BIM jargon will appear in the box. If you need more than one buzzphrase, just click the button again and again. </p>
-              <script language="Javascript" type="text/javascript">
-
-                var m_phrase_01 = new Array();
-
-                m_phrase_01[0] = "My BIM organisation believes in";
-                m_phrase_01[1] = "The BIM solution can only be";
-                m_phrase_01[2] = "The BIM consultants recommend";
-                m_phrase_01[3] = "Forward-looking BIM companies invest in";
-                m_phrase_01[4] = "Our upgraded BIM model now offers";
-                m_phrase_01[5] = "Our exploratory BIM research points to";
-                m_phrase_01[6] = "You really can't fail with BIM ";
-                m_phrase_01[7] = "I can make a BIM window to discuss your";
-                m_phrase_01[8] = "At base BIM level, this just BIMs down to";
-                m_phrase_01[9] = "Only non BIM geeks stuck in the 90s still go for";
-                m_phrase_01[10] = "We need to get BIMed about our";
-                m_phrase_01[11] = "We need a more BIM-sky approach to";
-                m_phrase_01[12] = "It's time that we became uber-BIM-efficient with our";
-                m_phrase_01[13] = "We need to cascade BIM memos about our";
-                m_phrase_01[14] = "This is no time to bite the BIM-bullet with our";
-                m_phrase_01[15] = "We're going forward with our BIM plans to implement";
-                m_phrase_01[16] = "We now offer BIM diplomas in";
-                m_phrase_01[17] = "It's time to revamp and reboot our BIM server";
-                m_phrase_01[18] = "Today marks the BIM anniversary celebrations of our";
-                m_phrase_01[19] = "We need a more contemporary BIM reimagining of our";
-
-                var m_phrase_02 = new Array();
-                m_phrase_02[0] = "integrated";
-                m_phrase_02[1] = "total";
-                m_phrase_02[2] = "systemised";
-                m_phrase_02[3] = "parallel";
-                m_phrase_02[4] = "functional";
-                m_phrase_02[5] = "responsive";
-                m_phrase_02[6] = "optional";
-                m_phrase_02[7] = "synchronised";
-                m_phrase_02[8] = "compatible";
-                m_phrase_02[9] = "balanced";
-                m_phrase_02[10] = "interactive";
-                m_phrase_02[11] = "regenerated";
-                m_phrase_02[12] = "21st Century";
-                m_phrase_02[13] = "millennial";
-                m_phrase_02[14] = "homogenised";
-                m_phrase_02[15] = "holistic";
-                m_phrase_02[16] = "facilitating";
-                m_phrase_02[17] = "global";
-                m_phrase_02[18] = "remote";
-                m_phrase_02[19] = "quality";
-                m_phrase_02[20] = "knowledge-based";
-                m_phrase_02[21] = "deconstructed";
-                m_phrase_02[22] = "'Outside the box'";
-                m_phrase_02[23] = "dot-com";
-                m_phrase_02[24] = "three-dimensional";
-                m_phrase_02[25] = "four-dimensional";
-                m_phrase_02[26] = "nascent";
-                m_phrase_02[26] = "ambient";
-
-                var m_word = new Array();
-                m_word[0] = "management";
-                m_word[1] = "organisational";
-                m_word[2] = "monitored";
-                m_word[3] = "reciprocal";
-                m_word[4] = "digital";
-                m_word[5] = "logistical";
-                m_word[6] = "transitiona";
-                m_word[7] = "incremental";
-                m_word[8] = "third-generation";
-                m_word[9] = "policy";
-                m_word[10] = "relative";
-                m_word[11] = "modular";
-                m_word[12] = "asset";
-                m_word[13] = "strategic";
-                m_word[14] = "administrative";
-
-                var m_phrase_ending = new Array();
-                m_phrase_ending[0] = "BIM options";
-                m_phrase_ending[1] = "7D BIM flexibility";
-                m_phrase_ending[2] = "BIM capability";
-                m_phrase_ending[3] = "BIM mobility";
-                m_phrase_ending[4] = "BIM programming";
-                m_phrase_ending[5] = "BIM concepts";
-                m_phrase_ending[6] = "BIM-time-phases";
-                m_phrase_ending[7] = "BIM paradigm shifts";
-                m_phrase_ending[8] = "projections";
-                m_phrase_ending[9] = "BIM hardware";
-                m_phrase_ending[10] = "BIM contingencies";
-                m_phrase_ending[11] = "BIM processing";
-                m_phrase_ending[12] = "alignment";
-                m_phrase_ending[13] = "BIMovation";
-                m_phrase_ending[14] = "matrix BIM approaches";
-                m_phrase_ending[15] = "BIM consulting";
-                m_phrase_ending[16] = "BIM resources";
-
-                //-- Generate a random number between 0 and max.
-                function randomNum(max) {
-                  var rNum = NaN;
-                  while (isNaN(rNum)) {
-                    rNum = Math.floor(Math.random() * (max));
-                  }
-                  return rNum;
-                }
-
-                //--Function to generate the random bimgarbage.
-                function bimgarbage() {
-                  msg = "" + m_phrase_01[randomNum(m_phrase_01.length)] + " ";
-                  msg += m_phrase_02[randomNum(m_phrase_02.length)] + " ";
-                  msg += m_word[randomNum(m_word.length)] + " ";
-                  msg += m_phrase_ending[randomNum(m_phrase_ending.length)] + ".";
-                  return msg;
-                }
-
-                //--Function to generate the random bimgarbage.
-                function example() {
-                  msg = "" + w5[randomNum(w5.length)];
-                  return msg;
-                }
-
-              </script>
-
-              <form name="myform" action="">
-                <input type="button" name="generator" value="Generate some BIMbledygook" onclick="myform.insight.value=bimgarbage()" />
-                <p>
-                  <textarea name="insight" cols="40" rows="3"></textarea>
-                </p>
-              </form>
-
-            </div>
-
-          </div>
         </div>
       </div>
-    </div>
+    </form>
   </div>
+
+  <!-- jQuery -->
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+  <!-- Morris Charts JavaScript -->
+  <script src="/bower_components/raphael/raphael-min.js"></script>
+  <script src="/bower_components/morrisjs/morris.min.js"></script>
 
 </body>
 </html>
